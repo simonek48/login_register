@@ -1,1 +1,2 @@
-# login_register
+# Login a register
+Projekt na databázové aplikácie
