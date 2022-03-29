@@ -6,15 +6,12 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <meta charset="utf-8">
     <title>registration</title>
+    <style>
+
+    </style>
   </head>
   <body>
-    <?php
-     include 'connect.php';
 
-     $query1 = mysqli_query($conn, "SELECT * FROM users");
-     while($row = mysqli_fetch_array($query1))
-     {
-     ?>
   <table class="table table-bordered">
   <thead>
     <tr>
@@ -24,6 +21,13 @@
       <th scope="col">Password</th>
     </tr>
   </thead>
+  <?php
+     include 'connect.php';
+
+     $query1 = mysqli_query($conn, "SELECT * FROM users");
+     while($row = mysqli_fetch_array($query1))
+     {
+     ?>
   <tbody>
     <tr>
         <td><?php echo $row['id'];?></td>
