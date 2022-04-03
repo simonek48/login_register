@@ -18,9 +18,6 @@
           <label> Username</label>
           <input type = "text" name = "username" class = "form-control"> 
         <div class = "form-group">    
-          <label> Email</label>
-          <input type = "text" name = "email" class = "form-control"> 
-        <div class = "form-group">    
           <label> Password</label>
           <input type = "text" name = "password" class = "form-control"> 
         <button type = "submit" class = "btn btn-primary"> Login </button>
@@ -28,5 +25,4 @@
       </div>
       </form>
   </body>
-
 </html>
