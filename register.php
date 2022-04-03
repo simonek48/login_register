@@ -14,7 +14,7 @@
       <div class = "row">
       <div class = "col-md-6">
         <h2>Register</h2>
-        <form action = "registered.php" method = "POST">
+        <form action = "validation.php" method = "POST">
         <div class = "form-group">
           <label> Username</label>
           <input type = "text" name = "username" class = "form-control"> 
@@ -32,4 +32,3 @@
   </body>
 
 </html>
-
