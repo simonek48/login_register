@@ -21,7 +21,7 @@
     <body>
       <p>You are successfully logged in.</p>
       <form action = "main.php" method = "POST">
-      <button type = "submit" class = "btn btn-primary"> Go to main page </button>
+      <button type = "submit" class = "btn btn-outline-dark"> Go to main page </button>
     </body>
   </html>
   <?php }

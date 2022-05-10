@@ -21,9 +21,9 @@
     echo "Username already taken";
   }
   else{ 
-    $insert = "INSERT INTO users(id, username, email, password)
+    $insert = "INSERT INTO users (id, username, email, password)
     values('$uid', '$username', '$email', '$password')";
-    $result= mysqli_query($conn, $insert); ?>  
+    $result = mysqli_query($conn, $insert); ?>  
 
     <html>
     <head>
@@ -34,8 +34,8 @@
     </head>
     <body>
       <p>You are registered successfully</p>
-      <form action = "main.php" method = "POST">
-      <button type = "submit" class = "btn btn-primary"> Go to main page </button>
+      <form action = "list.php" method = "POST">
+      <button type = "submit" class = "btn btn-outline-dark"> Go to main page </button>
     </body>
   </html>
     
