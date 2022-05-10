@@ -1,10 +1,13 @@
 <?php
 include('connect.php');
 
-$sql = 'DELETE FROM users WHERE id =' . $_GET['id'];
-$result = $conn->query($sql);
-$user = null;
-
+$query1 = mysqli_query($conn, "SELECT * FROM users");
+while($row = mysqli_fetch_array($query1))
+{
+    $sql = 'DELETE FROM users WHERE id =' . $row['id'];
+    $result = $conn->query($sql);
+    $user = null;
+}
 if ($conn->query($sql) === TRUE){
     echo "DELETED SUCCESSFULLY";
 }
