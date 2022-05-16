@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <?php
-  include 'connect.php';
+  require_once 'connect.php';
   $user_id = "SELECT COUNT(*) FROM users;";
   $count = mysqli_query($conn, $user_id);
   $row = mysqli_fetch_assoc($count);

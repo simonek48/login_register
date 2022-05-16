@@ -7,41 +7,57 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <meta charset="utf-8">
     <title>registration</title>
-  </head>
+    <style>
+      body{
+        background: url(background.jpeg);
+      }
+      th {
+        color: white;
+      }
+      td {
+        color: white;
+      }
+      button {
+        background-color: black;
+        color: white;
+      }
+      img {
+        height: 20px;
+        width: 20px;
+      }
+      </style>
+    </head>
   <body>
 
   <table class="table table-bordered">
     <thead>
       <tr>
         <th scope="col">ID</th>
+        <th scope="col">Avatar</th>
         <th scope="col">Username</th>
         <th scope="col">Email</th>
         <th scope="col">Password</th>
-        <th scope="col">Edit</th>
-        <th scope="col">Delete</th>
       </tr>
     </thead>
     <?php
       include 'connect.php';
 
       $query1 = mysqli_query($conn, "SELECT * FROM users");
-      while($row = mysqli_fetch_array($query1))
-      {
+      $row = mysqli_fetch_array($query1)
+      
       ?>
     <tbody>
       <tr>
           <td><?php echo $row['id'];?></td>
-          <td><?php echo $row['username'];?></td>
+          <td><img src = "defaultuserimage.png"></td>
+          <td>
+            <form action = "profile.php" method = "POST">
+            <button type = submit><?php echo $row['username'];?></button>
+            </form>
+          </td>
           <td><?php echo $row['email'];?></td>
           <td><?php echo $row['password'];?></td>
-          <td>
-            <button type = "submit" class = "btn btn-outline-primary"> EDIT </button></td>
-          <td> 
-            <form action = "deleteuser.php" method = "POST">
-            <button type = "submit" class = "btn btn-outline-danger"> DELETE </button>
-          </td>
       </tr>
-      <?php }?>
     </tbody>
   </table>
   </body>

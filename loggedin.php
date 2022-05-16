@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <?php
-  include 'connect.php';
+  require_once 'connect.php';
   
   $username = $_POST['username'];
   $password = $_POST['password'];
@@ -20,7 +20,7 @@
     </head>
     <body>
       <p>You are successfully logged in.</p>
-      <form action = "main.php" method = "POST">
+      <form action = "list.php" method = "POST">
       <button type = "submit" class = "btn btn-outline-dark"> Go to main page </button>
     </body>
   </html>

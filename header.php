@@ -19,13 +19,13 @@
     <header>
         <div class = "parent">
             <form action = "register.php">
-                <button type = "submit" class = "btn btn-outline-dark"> Register </button>
+                <button type = "submit" class = "btn btn-outline-light"> Register </button>
             </form>
             <form action = "login.php">
-                <button type = "submit" class = "btn btn-outline-dark"> Login </button>
+                <button type = "submit" class = "btn btn-outline-light"> Login </button>
             </form>
             <form action = "list.php">
-                <button type = "submit" class = "btn btn-outline-dark"> List </button>
+                <button type = "submit" class = "btn btn-outline-light"> List </button>
             </form>
     </div>
     </header>

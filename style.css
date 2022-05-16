@@ -1,0 +1,26 @@
+body {
+    background: url('background.jpeg');
+    background-size: cover;
+  }
+.container {
+    display: flex;
+    justify-content: center;
+}
+.row {
+    background-color: black;
+    display: inline-block;
+    position: absolute;   
+    top: 50%;
+    transform: translate(0, -50%);
+    border: 1px solid white;
+    padding: 10px;
+}
+.form-group button {
+    margin-top: 20px;
+}
+h2{
+    color: white;
+}
+label {
+    color: white;
+}
