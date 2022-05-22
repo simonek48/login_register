@@ -9,6 +9,7 @@
   $s = " SELECT * FROM users where username = '$username' AND password = '$password'";
   $result = mysqli_query($conn, $s);
   $num = mysqli_num_rows($result);
+  $loggedin = 1;
 
   if($num == 1){?> 
     <html>

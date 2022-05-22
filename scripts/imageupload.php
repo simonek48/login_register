@@ -52,4 +52,5 @@ $num = '1';
   <input type="hidden" name="username" value="<?php echo $username ?>">
   <input type="hidden" name="email" value="<?php echo $email ?>">
   <input type="hidden" name="num" value="<?php echo $num ?>">
+  <input type="hidden" name="filename" value="<?php echo $target_file ?>">
   <button type = "submit" class = "btn btn-outline-dark"> Go to profile page </button>

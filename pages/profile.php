@@ -37,6 +37,10 @@
     width: 130px;
     height: 130px; 
   }
+  .avatar {
+    margin: 10px;
+    float: left;
+  }
 
     </style>
     <meta charset="utf-8">
@@ -48,22 +52,30 @@
     include 'header.php';
     require_once '../scripts/connect.php';
     
+
     $username = $_POST['username'];
     $email = $_POST['email'];
     $img = '../defaultuserimage.png';
-
-    if(isset($_POST['num'])){
-      $mydir = '../uploads/'; 
-      $myfiles = array_diff(scandir($mydir), array('.', '..')); 
-    
-      foreach($myfiles as $file){
-        $img = $mydir.$file;
-      }
+    $mydir = '../uploads/'; 
+  
+    if(isset($_POST['filename'])){
+      $target_file = $_POST['filename'];
+      $sql = "UPDATE profileimg SET imagelocation = '$target_file', status = 'notdefault' WHERE username = '$username'";
+      mysqli_query($conn, $sql);
     }
     ?>
   <div class= "container">
     <div class = "row">
         <h2>Profile</h2><br>
+        <?php
+          $imglocation = mysqli_fetch_assoc(mysqli_query($conn, "SELECT imagelocation FROM profileimg WHERE username = '$username'"));
+          $default = mysqli_fetch_assoc(mysqli_query($conn, "SELECT status FROM profileimg WHERE username = '$username'"));
+          if($default['status'] == 'default'){
+          }
+          else {
+            $img = $imglocation['imagelocation'];
+          }
+        ?>
         <img src = <?php echo $img?>>
         <div class = "form-group"> 
           <form action = "../scripts/imageupload.php" method = "POST" enctype = "multipart/form-data">

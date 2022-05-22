@@ -7,9 +7,12 @@
   $email = $_POST['email'];
   $password = $_POST['password'];
   
-  $s = " SELECT * FROM users where username = '$username'";
-  $result = mysqli_query($conn, $s);
+  $sql1 = " SELECT * FROM users where username = '$username'";
+  $result = mysqli_query($conn, $sql1);
   mysqli_fetch_assoc($result);
+
+  $sql2 = "INSERT INTO profileimg VALUES('NULL', '$username', 'default')";
+  mysqli_query($conn, $sql2);
 
   if(mysqli_num_rows($result) == 1){
     echo "Username already taken";

@@ -28,7 +28,7 @@
     </body>
   </html>
   <?php }
-
+  
   else{ 
     echo "ERROR.". $conn->error;
     }

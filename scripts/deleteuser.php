@@ -3,8 +3,10 @@ include('connect.php');
 
 $username = $_POST['username'];
 
-$sql = "DELETE FROM users WHERE username ='$username'";
-$query1 = mysqli_query($conn, $sql);
+$sql1 = "DELETE FROM users WHERE username ='$username'";
+$sql2 = "DELETE FROM profileimg WHERE username ='$username'";
+$query1 = mysqli_query($conn, $sql1);
+mysqli_query($conn, $sql2);
 
 
 if ($query1){

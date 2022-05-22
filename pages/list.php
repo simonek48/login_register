@@ -40,6 +40,15 @@
     </thead>
     <?php
       include '../scripts/connect.php';
+      
+      $img = '../defaultuserimage.png';
+      $mydir = '../uploads/'; 
+
+      if(isset($_POST['filename'])){
+        $target_file = $_POST['filename'];
+        $sql = "UPDATE profileimg SET imagelocation = '$target_file', status = 'notdefault' WHERE username = '$username'";
+        mysqli_query($conn, $sql);
+      }
 
       $query1 = mysqli_query($conn, "SELECT * FROM users");
       while($row = mysqli_fetch_assoc($query1)){
@@ -48,8 +57,17 @@
         $password = $row['password'];
       ?>
     <tbody>
+    <?php
+          $imglocation = mysqli_fetch_assoc(mysqli_query($conn, "SELECT imagelocation FROM profileimg WHERE username = '$username'"));
+          $default = mysqli_fetch_assoc(mysqli_query($conn, "SELECT status FROM profileimg WHERE username = '$username'"));
+          if($default['status'] == 'default'){
+          }
+          else {
+            $img = $imglocation['imagelocation'];
+          }
+        ?>
       <tr>
-          <td><img src = "../defaultuserimage.png"></td>
+          <td> <img src = <?php echo $img?>></td>
           <td>
             <form action = "profile.php" method = "POST">
               <input type="hidden" name="username" value="<?php echo $username ?>">
