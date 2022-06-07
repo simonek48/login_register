@@ -60,7 +60,7 @@
   
     if(isset($_POST['filename'])){
       $target_file = $_POST['filename'];
-      $sql = "UPDATE profileimg SET imagelocation = '$target_file', status = 'notdefault' WHERE username = '$username'";
+      $sql = "UPDATE profileimg SET imagename = '$target_file', status = 'notdefault' WHERE username = '$username'";
       mysqli_query($conn, $sql);
     }
     ?>
@@ -68,12 +68,12 @@
     <div class = "row">
         <h2>Profile</h2><br>
         <?php
-          $imglocation = mysqli_fetch_assoc(mysqli_query($conn, "SELECT imagelocation FROM profileimg WHERE username = '$username'"));
+          $imglocation = mysqli_fetch_assoc(mysqli_query($conn, "SELECT imagename FROM profileimg WHERE username = '$username'"));
           $default = mysqli_fetch_assoc(mysqli_query($conn, "SELECT status FROM profileimg WHERE username = '$username'"));
           if($default['status'] == 'default'){
           }
           else {
-            $img = $imglocation['imagelocation'];
+            $img = $imglocation['imagename'];
           }
         ?>
         <img src = <?php echo $img?>>

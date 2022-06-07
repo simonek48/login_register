@@ -58,12 +58,12 @@
       ?>
     <tbody>
     <?php
-          $imglocation = mysqli_fetch_assoc(mysqli_query($conn, "SELECT imagelocation FROM profileimg WHERE username = '$username'"));
+          $imglocation = mysqli_fetch_assoc(mysqli_query($conn, "SELECT imagename FROM profileimg WHERE username = '$username'"));
           $default = mysqli_fetch_assoc(mysqli_query($conn, "SELECT status FROM profileimg WHERE username = '$username'"));
           if($default['status'] == 'default'){
           }
           else {
-            $img = $imglocation['imagelocation'];
+            $img = $imglocation['imagename'];
           }
         ?>
       <tr>
